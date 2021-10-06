@@ -1,0 +1,242 @@
+Exercice 1
+
+1)
+
+2)Lorsqu'on ecrit sysout avec ctrl +espace, eclipse nous ecrit directement la fonction System.out.println() nous permettant d'afficher un texte. sysout est l'abrevation de la méthode sur eclipse.
+
+3)Lorsqu'on ecrit toStr avec ctrl + espace, eclipse nous ecrit directement la fonction toString permettant de soit créer une fonction toStr soit de réecrire la méthode toString qui est hérité de la classe object
+
+4)main avec ctrl+espace permet également d'abréger la fonction main qui va créer la méthode private static void main(String[] args)
+
+5)Lorsqu'on tape la commande ctrl+espace après avoir créer la variable foo, eclipse va nous générer automatiquement le constructeur.
+Si on tape set et ctrl+espace, eclipse va nous générer automatiquement la méthode set(accesseur)
+
+6)La commande permet de renommer la classe. Pareil pour le int foo
+
+7) at home
+
+Exercice 2
+
+1)La fonction marche car on utilise un objet p qui se trouve dans la classe donc on peut l'utiliser sans accesseur ( get et set)
+
+2)Or lorsqu'on l'utilise dans la classe TestPoint, les attributs ne sont pas reconnus car on ne se trouve pas dans la même classe et il faudra utiliser des accesseurs.
+
+3)Car si on ne le fait pas, on pourrait accéder d'une classe a l'autre sans même devoir utiliser de méthode tel que get().
+
+4)Un accesseur est une méthode permettant de récupérer le contenu d'une donnée d'un membre protégée.Oui on en a besoin ici si on veut utiliser des attributs de la classe Point dans la classe TestPoint. (Si on devait les utiliser ici :
+
+	public int getX() {
+		return x;
+	}
+	public int getY() {
+		return y;
+	} 
+Puis on les appelle System.out.println(p.getX()+" "+p.getY());)
+
+5)Si on crée un constructeur, on ne peut plus instancier l'objet Point en question a un nouveau constructeur vide comme il est fait ici : "Point p = new Point();"
+
+6)C'est la même chose, les paramètres du constructeur ne change en rien sa structure.
+
+7)?
+
+8)Lorsque le constructeur l'appellera, le parametre sera pris en compte pour l'appel.
+
+9)Lorsqu'on affiche un l'objet de type point, la console nous renvoie le resultat "Point@15db9742" donc il faut pour afficher redefinir la classe toString 
+public String toString() {
+		return "Les coordonnées sont :"+ this.x+ " "+this.y;
+	}
+et donc le resultat est affiché.
+
+Exercice 3
+
+1)Le code ci dessus est vrai pour le premier sysout et faux pour le second car lorsque la comande p1= p2 est effectué, ils sont rangés dans le meme espace memoire or les valeurs de p1 et p3 sont les memes mais sont rangés 
+dans des espaces mémoires differents
+
+2)public boolean isSameAs(Point p)
+	{
+		boolean bool=true;
+		if(p.x==this.x && p.y==this.y)
+		{
+			bool=true;
+		}
+		else {
+			bool=false;
+		}
+		return bool;
+	}
+System.out.println(p1.isSameAs(p3));
+Le resultat renvoyé est true.
+
+3)IndexOf va renvoyer 0 pour p2 car il est dans le meme espace memoire que p1 et renverra -1 pour p3 car il ne l'est pas.
+Il faut donc redefinir la méthode equals en castant l'objet en Point et 0 sera retourné
+public boolean equals(Object o)
+	{
+		Point point =  (Point)o;
+		return this.x==point.x && this.y==point.y;
+	}
+
+Exercice 4
+
+1)
+public class Polyline {
+	private ArrayList<Point> Polyline= new ArrayList<Point>();
+	
+	public Polyline(ArrayList<Point> PointList)
+	{
+		this.Polyline = PointList;
+	}
+}
+
+2)
+Une erreur lors du compilateur se déclenche si il n'y a plus de place dans le tableau et pour résoudre ce problème j'ai décidé de créer un second tableau 
+public Point[] add(Point p)
+	{
+		Point[] DeuxPolylist= new Point[Polylist.length+1];
+		for(int i=0;i<Polylist.length;i++)
+		{
+			DeuxPolylist[i]=Polylist[i];
+			DeuxPolylist[Polylist.length]=p;
+			
+		}
+		return DeuxPolylist;
+	}
+
+3)
+public int pointCapacity()
+	{
+		return Polylist.length;
+	}
+	
+public int nbPoints()
+	{
+		int nb=0;
+		for(int i=0;i<Polylist.length;i++)
+		{
+			if(!Polylist[i].equals(null))
+			{
+				nb++;
+			}
+		}
+		return nb;
+	}
+
+4)
+public boolean contains(Point p)
+	{
+		boolean bool=false;
+		for (Point point : Polylist) {
+			if(point.isSameAs(p))
+			{
+				bool=true;
+			}
+		}
+		return bool;
+				
+	}
+5)Une erreur se produit
+
+6)
+Les codes sont ci-dessous:
+
+private LinkedList<Point> PolyLinkedList = new LinkedList<Point>();
+public int pointCapacity()
+	{
+		return PolyLinkedList.size();
+	}
+public int nbPoints()
+	{
+		int nb=0;
+		for(int i =0;i<PolyLinkedList.size();i++)
+		{
+			if(!PolyLinkedList.get(i).equals(null))
+			{
+				nb++;
+			}
+		}
+		return nb;
+	}
+
+public boolean contains(Point p)
+	{
+		boolean bool=false;
+		for (Point point : PolyLinkedList) {
+			if(point.isSameAs(p))
+			{
+				bool=true;
+			}
+		}
+		return bool;
+				
+	}
+
+Exercice 5
+
+1) Si on devait ecrire la fonction translate sa définition serait :
+
+ 	public void translate(int dx, int dy) {
+		this.x = dx;
+		this.y = dy;
+	}
+
+2) public class Circle {
+
+	private int radius;
+	private Point centre;
+	
+	public Circle(int rad, Point p) {
+		this.radius = rad;
+		this.centre = new Point(p);
+	}
+	
+}
+
+3) 	@Override
+	public String toString(){
+		return "Les coordonées du cercle sont " + this.radius + " et " + this.centre;
+	}
+
+4)	public void translate(int dx, int dy) {
+		this.centre.translate(dx, dy);
+	}
+
+5)?
+
+6) 
+Ca ne sert à rien car la valeur ne sera pas modifié 
+?
+
+7)Ici on utilise Math. qui est une classe permettant de traiter des opérations mathématique diverses
+et variés et on l'utilise pour récupérer la valeur du PI pour calculer l'air d'un cercle
+(PI*r^2)
+public double area() {
+		return (Math.PI *  Math.pow(radius, radius));
+	}
+Puis on affiche l'aire également dans la méthode toString
+	@Override
+	public String toString(){
+		return "Les coordonnées du cercle sont " + this.radius + " et " + this.centre + " son aire est  " + this.area(); 
+	}
+
+8)
+	public boolean contains(Point p)
+	{
+		boolean bool=false;
+		if(Math.sqrt(Math.pow(p.getX()-this.centre.getX(),2) + Math.pow(p.getY()-this.centre.getY(),2))< this.radius)
+		{
+			bool=true;
+		}
+		
+		return bool;
+	}
+
+Exercice 6
+
+1) Oui on pourrait utiliser une interface car comme on le voit dans la question 2, les parametres de l'anneau sont identiques de ceux du cercle
+
+2)Lors du constructeur il ne faut pas oublier le mot clé extends pour faire hériter la classe anneaux de la classe cercle ainsi que le mot clé super pour directement herité des attributs
+
+3)
+
+4)
+
+5)Meme question que la 2.7
