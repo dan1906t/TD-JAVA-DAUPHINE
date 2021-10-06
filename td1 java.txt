@@ -231,7 +231,7 @@ Puis on affiche l'aire également dans la méthode toString
 
 Exercice 6
 
-1) Oui on pourrait utiliser une interface car comme on le voit dans la question 2, les parametres de l'anneau sont identiques de ceux du cercle
+1) Oui on pourrait utiliser un héritage e car comme on le voit dans la question 2, les parametres de l'anneau sont identiques de ceux du cercle
 
 2)Lors du constructeur il ne faut pas oublier le mot clé extends pour faire hériter la classe anneaux de la classe cercle ainsi que le mot clé super pour directement herité des attributs
 
@@ -240,3 +240,5 @@ Exercice 6
 4)
 
 5)Meme question que la 2.7
+
+6)
