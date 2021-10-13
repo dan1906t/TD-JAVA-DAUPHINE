@@ -1,0 +1,90 @@
+Exercice 1) 
+Fais en cour
+
+Exercice 2)
+1)A la ligne 54, l'objet mère appelle la fonction miage or aucune n'est definit pour cette objet est et juste definit 
+pour la classe fille.
+
+On remarque que la méthode h définit dans la classe mère doit retourner un entier or lors de sa redéfinition dans la classe
+Fille qui hérite de la classe mère, elle retourne un char. Dans le même registre, la méthode i de la classe mère a été 
+définit en void donc elle ne devrait rien retourner mais elle a été définit dans le but qu'elle retourne un int en 
+l'occurence 3, donc c'est faux.
+
+C'est un problème du même genre que l'on remarque à la ligne 10 de la classe mère. En effet cette derniere est definit 
+dans un premier temps en Protected donc elle doit également etre definit en protected ou en une visibilité plus grande 
+donc pour protected par exemple on pourrait avoir -> Sans modificateur,public ou protected mais ici private est plus 
+restreint donc c'est faux. Comme par exemple dans la méthode f, elle est définit en private dans la classe mère et en 
+protected dans la classe fille donc c'est bon car private -> public, sans modif, protected.
+
+Au niveau des exception IO, Si elle est définit en IO Exception dans la classe mère elle devra être également définit 
+comme IO exception dans la classe Fille et pas autrement.
+Ce n'est pas le cas ici, comme par exemple dans la méthode j, elle utilise une Exception or elle utilise une IO Exception
+dans la classe Fille.Même raisonnement pour la méthode k et l.
+
+3)Une surcharge est présente lorsqu'on a 2 fonctions portant le même nom mais avec des paramètre différents. ici on void c(),void c(Fille b),static void d(Mere mere)
+Une redefinition est le fait de redefinir une classe de la classe mère a la classe fille et il faut utiliser 
+l'annotation @Override.
+
+4)
+fille.miage() : Affiche "miage" car la méthode miage est definit dans la classe Fille.
+
+mereFille.miage() : Affiche "miage" car ici Mere mereFille=new Fille(); on nous écrit cette ligne et la création du nouvel objet Fille avec new Fille() est importante, car :
+La fonction void miage n'est ni statique ni un champ donc on prend en compte l'objet apres le new donc en l'occurence ici Fille(). La fonction miage affiche donc "miage".
+
+mere.miage(): N'affiche rien car la méthode miage n'est pas définit dans la classe Mère
+
+((Fille)mereFille).miage(): Affiche "miage" car on cast l'objet Fille donc on utilise la fonction présente dans la classe de la fille.
+
+mere.a(): Affiche "Mère_a" car la fonction a est définit dans la classe Mère.
+
+mereFille.a(): Affiche "Fille_a" car c'est une instance donc on prend en compte l'objet après donc ici en l'occurence l'objet Fille.
+
+fille.a(): Affiche "Fille_a" car la fonction a est définit dans la classe Mère.
+
+((Mere)mereFille).a(): ?
+
+mereFille.b(null): N'affiche rien car null n'est pas un objet de type Fille.
+
+mereFille.c(): N'affiche rien car il manque le paramètre nécessaire au fonctionnement de la méthode de la classe Fille.
+
+mereFille.c(mere): Affiche "Fille_c(Mere)"
+
+mereFille.c(mereFille): N'affiche rien 
+
+mereFille.c(fille): Affiche "Fille_c(Fille)"
+
+fille.c(fille): Affiche "Fille_c(Fille)"
+
+mere.d(): Affiche "static Mere_d")"
+
+mereFille.d(): Affiche "static Mere_d" Car la méthode est static donc on prend on compte le premier Objet c'est a dire ici Mère.
+
+mere.printF(): Affiche "Mere_f"
+
+mereFille.printF(): N'affiche rien
+
+mereFille.j(): Affiche "Fille_j"
+
+mereFille.k(): Affiche "Mere_k"
+
+mereFille.l(): Affiche "Fille_l"
+
+mereFille.m(): Affiche "Fille_m"
+
+Exercice 3)
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
