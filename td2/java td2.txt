@@ -41,7 +41,7 @@ mereFille.a(): Affiche "Fille_a" car c'est une instance donc on prend en compte 
 
 fille.a(): Affiche "Fille_a" car la fonction a est définit dans la classe Mère.
 
-((Mere)mereFille).a(): ?
+((Mere)mereFille).a(): Affiche "Mère_a"
 
 mereFille.b(null): N'affiche rien car null n'est pas un objet de type Fille.
 
