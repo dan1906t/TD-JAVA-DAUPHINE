@@ -1,0 +1,18 @@
+1) 
+La classe Graphics est une classe abstraite utilisable pour toutes les sortes de graphique.
+La classe Graphics2D herite de la classe Graphics et est plus sophistiqué pour la géométrie, etc...
+La classe Jframe est une autre version de java.awt qui ajoute de nouveaux support pour par exemple les composants JFC et Swing.
+La classe Jpanele est contenu dans le package java.swing son but principal est d'organiser les composants.
+2)
+fichier java ci-joint
+
+3) 
+fichier java ci-joint
+
+4)
+fichier java ci-joint
+
+5)
+
+
+6)java.swing est une collection de composants qui ont la capacité de developper des objets graphique qui sont indépendants de la platerforme or awt dépendent de la plateforme 
