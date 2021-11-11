@@ -1,0 +1,18 @@
+Exercice 1 
+
+10)Il faut retourner un objet null si il n'y a pas de voiture
+de la marque recherchée.
+
+Exercice 2
+
+1) Oui le comportement est naturel car tout d'abord les objets
+a b et c sont différents. En ce qui concerne les test avec equals leurs comportement sont 
+également correct car apres redefinition de la méthode b et c sont égaux et pareil pour a 
+et d.
+
+2)C'est un comportement normal pour a et b car a est le premier indice de la liste et b
+le deuxième or c n'est pas dedans et son indice est de 1.
+
+3)La méthode contains de HashSet indique qu'elle retourne true si l'objet est contenu
+dans le set or ici c n'est pas contenu dans c et c'est b qui l'est. Donc le comportement
+est logique.
