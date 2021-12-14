@@ -1,0 +1,1 @@
+La complexité de mon implementation est 0(n) car on ne fais qu'un parcours de liste
